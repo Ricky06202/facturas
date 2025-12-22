@@ -15,6 +15,23 @@ export interface Invoice {
   title: string
   description: string
   date: string
+  createdAt: string
+  // Scraped data
+  total?: number
+  descuentos?: number
+  itbms?: number
+  emisor?: {
+    nombre: string
+    ruc: string
+    dv: string
+  }
+  products?: Array<{
+    descripcion: string
+    cantidad: number
+    precioUnitario: number
+    descuento: number
+    precioTotal: number
+  }>
 }
 
 const Tab = createBottomTabNavigator()
